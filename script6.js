@@ -3,9 +3,19 @@
 //  (example: 32243 → 34223)
 
 function reversenumber(number){
-    return parseInt(number.toString().split('').reverse().join('')); // first split the string, then reverses and then join again for reverse order string 
+    // Convert the number to a string, split the string into an array of characters,
+    // reverse the array, join the array back into a string, and convert it back to an integer
+    return parseInt(number.toString().split('').reverse().join('')); 
 }
+
+// Import the prompt-sync module to allow for user input
 const prompt = require("prompt-sync")();
-let input6 = prompt('Enter a Number : ');
-let result6 = reversenumber(input6);
-console.log(result6);
+
+// Accept user input
+let input = prompt('Enter a Number : ');
+
+// Call the reversenumber function with the user's input and store the result
+let result = reversenumber(input);
+
+// Output the result to the console
+console.log(result);

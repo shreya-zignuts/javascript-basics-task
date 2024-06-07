@@ -3,16 +3,20 @@
 // (example: 'abacddbec' → ‘e’)
 
 function findFirstNotRepeated(str){
-        for(let i =0;i<str.length;i++){
-            let char=str[i];
-            if(str.indexOf(char)===str.lastIndexOf(char)){
-                return char
-            }
+    // Iterate through each character in the string
+    for(let i = 0; i < str.length; i++){
+        let char = str[i];
+        // Check if the character is unique by comparing its first and last index in the string
+        if(str.indexOf(char) === str.lastIndexOf(char)){
+            return char;  // Return the first non-repeated character
         }
-        return null;
     }
-    const prompt = require("prompt-sync")();
-    let input4 = prompt('Enter a String : ');
-    let result4 = findFirstNotRepeated(input4);
-    console.log(result4);
+    return null;  // Return null if no unique character is found
+}
+
+// Accept user input
+const prompt = require("prompt-sync")();
+let input = prompt('Enter a String : ');
+let result = findFirstNotRepeated(input);
+console.log(result);  // Output the result
     
